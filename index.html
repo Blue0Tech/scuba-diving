@@ -3,6 +3,8 @@
     <head>
         <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
         <script src="./Movement.js"></script>
+        <script src="./Fish.js"></script>
+        <script src="./Seahorse.js"></script>
     </head>
     <body>
         <a-scene>
@@ -11,6 +13,7 @@
                 <a-img src="./sky.jpg" id="sky"></a-img>
                 <a-asset-item src="./diver/scene.gltf" id="diver"></a-asset-item>
                 <a-asset-item src="./ocean/scene.gltf" id="ocean"></a-asset-item>
+                <a-asset-item src="./guppy_fish/scene.gltf" id="fishItem"></a-asset-item>
             </a-assets>
 
             <a-camera position="0 0 0" movement wasd-controls-enabled="false"></a-camera>
@@ -19,7 +22,7 @@
             <a-entity position="0 -1 0" rotation="90 180 0" gltf-model="#diver"></a-entity>
             </a-entity>
 
-            <a-entity position=" 0 7 0" gltf-model="#ocean"></a-plane>
+            <a-entity position=" 0 7 0" gltf-model="#ocean" id="oceanPart" fish seahorse></a-entity>
         </a-scene>
     </body>
 </html>
