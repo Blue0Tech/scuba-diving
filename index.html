@@ -3,6 +3,7 @@
     <head>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
         <script src="./Movement.js"></script>
         <script src="./Fish.js"></script>
         <script src="./Seahorse.js"></script>
@@ -20,9 +21,26 @@
 
             <a-camera position="0 0 0" movement wasd-controls-enabled="false"></a-camera>
             <a-entity text="value:WASD for moving along x and z axes, q for down, e for up.;" position="0 0 -1"></a-entity>
+            <a-entity position="0 0 0" id="timerentity" movement>
+                <a-entity
+                    position="-0.2 0.3 -0.5"
+                    text="value: TIME\nREMAINING"
+                ></a-entity>
+                <a-entity
+                    id="timer"
+                    position="-0.2 0.2 -0.5"
+                    text="value: 00:00"
+                ></a-entity>
+            </a-entity>
+            <a-entity position="1 0.3 -0.5" text="value:FISHES\nREMAINING" movement></a-entity>
+            <a-entity id="fishes" position="1 0.2 -0.5" text="value:20" movement></a-entity>
+            <a-entity position="1 -0.3 -0.5" text="value:SCORE" movement></a-entity>
+            <a-entity id="score" position="1 -0.4 -0.5" text="value:20" movement></a-entity>
             <a-entity position=" 0 7 0" gltf-model="#ocean" id="oceanPart" seahorse fish></a-entity>
+            <a-entity id="gameovertext" position="0.3 -0.3 -0.5" text="value:GAME OVER" visible="false" movement></a-entity>
             <a-entity position="0 0 -2" movement>
-            <a-entity position="0 -1 0" rotation="90 180 0" gltf-model="#diver" gameplay dynamic-body="mass:0"></a-entity>
+                <a-entity position="0 -1 0" rotation="90 180 0" gltf-model="#diver" gameplay dynamic-body="mass:0"></a-entity>
+                </a-entity>
             </a-entity>
         </a-scene>
     </body>
