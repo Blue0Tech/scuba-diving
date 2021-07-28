@@ -15,7 +15,11 @@ AFRAME.registerComponent('seahorse',{
         SeahorseElement.setAttribute('id',id);
         SeahorseElement.setAttribute('position',position);
         SeahorseElement.setAttribute('gltf-model','./seahorse/scene.gltf');
-        SeahorseElement.setAttribute('scale',{x:0.005,y:0.005,z:0.005});
+        SeahorseElement.setAttribute('scale',{x:2,y:2,z:2});
+        SeahorseElement.setAttribute('static-body',{});
+        SeahorseElement.setAttribute("gameplay", {
+            elementId: `#${id}`,
+        });
         oceanElement.append(SeahorseElement);
     }
 });

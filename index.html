@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
         <script src="./Movement.js"></script>
         <script src="./Fish.js"></script>
         <script src="./Seahorse.js"></script>
+        <script src="Game.js"></script>
     </head>
     <body>
         <a-scene>
@@ -18,11 +20,10 @@
 
             <a-camera position="0 0 0" movement wasd-controls-enabled="false"></a-camera>
             <a-entity text="value:WASD for moving along x and z axes, q for down, e for up.;" position="0 0 -1"></a-entity>
+            <a-entity position=" 0 7 0" gltf-model="#ocean" id="oceanPart" seahorse fish></a-entity>
             <a-entity position="0 0 -2" movement>
-            <a-entity position="0 -1 0" rotation="90 180 0" gltf-model="#diver"></a-entity>
+            <a-entity position="0 -1 0" rotation="90 180 0" gltf-model="#diver" gameplay dynamic-body="mass:0"></a-entity>
             </a-entity>
-
-            <a-entity position=" 0 7 0" gltf-model="#ocean" id="oceanPart" fish seahorse></a-entity>
         </a-scene>
     </body>
 </html>
